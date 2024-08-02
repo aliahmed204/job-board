@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\v1;
 
 
 Route::get('/dashboard', function () {
@@ -17,9 +18,11 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('v1')->group(function () {
     Route::group([
-        'controller' => v1\ListingController::class,
+        'controller' => ListingController::class,
+        'as'         => 'listings.',
     ], function(){
-        Route::get('/', 'index')->name('listing.index');
+        Route::get('/', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
     });
 });
 
