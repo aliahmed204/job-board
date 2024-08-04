@@ -20,7 +20,7 @@
             <div class="-my-6">
                 @foreach($listings as $listing)
                     <a
-                        href="{{--{{ route('listings.show', $listing->slug) }}--}}"
+                        href="{{ route('listings.show', $listing->slug) }}"
                         class="py-6 px-4 flex flex-wrap md:flex-nowrap border-b border-gray-100 {{ $listing->is_highlighted ? 'bg-yellow-100 hover:bg-yellow-200' : 'bg-white hover:bg-gray-100' }}"
                     >
                         <div class="md:w-16 md:mb-0 mb-6 mr-4 flex-shrink-0 flex flex-col">

@@ -23,6 +23,9 @@ Route::prefix('v1')->group(function () {
     ], function(){
         Route::get('/', 'index')->name('index');
         Route::get('/create', 'create')->name('create');
+        Route::get('/{listing}', 'show')->name('show');
+        Route::get('/{listing}/apply', 'apply')->name('apply');
+        Route::post('/store', 'store')->name('store');
     });
 });
 

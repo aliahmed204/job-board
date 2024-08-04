@@ -9,6 +9,9 @@ class Click extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_agent', 'user_id', 'ipaddress'
+    ];
     public function listing()
     {
         return $this->belongsTo(Listing::class);
