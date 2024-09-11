@@ -41,4 +41,22 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    /**
+     * Indicate that the user should have a personal team.
+     */
+//    public function withPersonalTeam(): static
+//    {
+//        return $this->hasTeam(fn (Team $team) => $team->ownedBy($this->state('email')));
+//    }
+      public function admin(): static
+      {
+          return $this->state([
+              'name' => 'ali ahmed',
+              'email' => 'ali@admin.com',
+              'email_verified_at' => now(),
+              'password' => Hash::make('123456'),
+              'remember_token' => Str::random(10),
+              ]);
+      }
 }

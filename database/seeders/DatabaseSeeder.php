@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
             });
         });
 
+       // User::factory()->admin()->create();
+
     }
 }
